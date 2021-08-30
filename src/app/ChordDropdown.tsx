@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import Select from "react-dropdown-select";
-import { getChordOptions } from "../sdk";
+import { getChordInfo, getChordOptions } from "../sdk";
 
 const chordOptions = getChordOptions();
 
@@ -11,7 +11,10 @@ export const ChordDropdown: FC = () => {
       <Select
         options={chordOptions}
         onChange={(values) => {
-          setSelectedChord(values[0].name);
+          const chordInfo = getChordInfo(values[0].name);
+          const chordToString =
+            chordInfo === null ? "No info known" : chordInfo.toString();
+          setSelectedChord(chordToString);
         }}
         values={[]}
         labelField="name"
