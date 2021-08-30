@@ -13,9 +13,11 @@ export const ChordDropdown: FC = () => {
         onChange={(values) => {
           setSelectedChord(values[0].name);
         }}
-        values={chordOptions}
-        placeholder={"Select chord..."}
+        values={[]}
         labelField="name"
+        style={{ width: "200px", color: "black" }}
+        searchable={true}
+        searchBy="name"
       />
       <p>{selectedChord}</p>
     </>
