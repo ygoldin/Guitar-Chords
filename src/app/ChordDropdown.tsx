@@ -1,9 +1,23 @@
-import React, { FC } from 'react';
-import {getChordNames } from '../sdk';
+import React, { FC, useState } from "react";
+import Select from "react-dropdown-select";
+import { getChordOptions } from "../sdk";
 
-const chordNames = getChordNames();
+const chordOptions = getChordOptions();
 
 export const ChordDropdown: FC = () => {
-    
-    return <p>{chordNames}</p>;
-}
+  const [selectedChord, setSelectedChord] = useState("");
+  return (
+    <>
+      <Select
+        options={chordOptions}
+        onChange={(values) => {
+          setSelectedChord(values[0].name);
+        }}
+        values={chordOptions}
+        placeholder={"Select chord..."}
+        labelField="name"
+      />
+      <p>{selectedChord}</p>
+    </>
+  );
+};
