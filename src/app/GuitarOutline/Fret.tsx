@@ -6,7 +6,7 @@ import { StringFret } from "./StringFretDiv";
 export const Fret: FC = () => {
   const renderFret = () => {
     const result = [];
-    for (let i = 0; i < NUM_STRINGS; i++) {
+    for (let i = 0; i < NUM_STRINGS - 1; i++) {
       result.push(<StringFret />);
     }
     return result;
