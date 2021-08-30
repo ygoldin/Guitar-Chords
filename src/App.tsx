@@ -1,7 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { ChordDropdown } from './app/ChordDropdown';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { ChordDropdown } from "./app/ChordDropdown";
+import { GuitarOutline } from "./app/GuitarOutline/GuitarOutline";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         >
           Learn React
         </a>
-        <ChordDropdown/>
+        <ChordDropdown />
+        <GuitarOutline numFrets={6} />
       </header>
     </div>
   );
