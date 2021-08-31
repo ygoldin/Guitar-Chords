@@ -1,0 +1,12 @@
+.guitarOutline {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.head {
+  display: block;
+  width: calc(52 * 5px + 2px);
+  height: 10px;
+  fill: black;
+}

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Fret } from "./Fret";
-import "./GuitarOutline.module.scss";
+import "./GuitarOutline.scss";
 
 export type GuitarOutlineProps = Readonly<{
   numFrets: number;
@@ -14,5 +14,10 @@ export const GuitarOutline: FC<GuitarOutlineProps> = ({ numFrets }) => {
     }
     return result;
   };
-  return <div className={"guitarOutline"}>{renderOutline()}</div>;
+  return (
+    <div className={"guitarOutline"}>
+      <div className={"head"}></div>
+      {renderOutline()}
+    </div>
+  );
 };
