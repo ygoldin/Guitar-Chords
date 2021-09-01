@@ -1,3 +1,5 @@
+// Created by Yael Goldin
+
 import { FC } from "react";
 import { FretFingerPlacement } from "./FretFingerPlacement";
 import "./FingerPlacementOverlay.scss";
