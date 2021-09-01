@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { ChordDropdown } from "./ChordDropdown";
+import { ChordDropdown } from "./ChordDropdown/ChordDropdown";
 import { GuitarOutline } from "./GuitarOutline/GuitarOutline";
 import "./GuitarChords.scss";
 import { ChordInfo } from "../sdk/ChordInfo";
