@@ -26,6 +26,7 @@ export const ChordDropdown: FC<ChordDropdownProps> = ({ onSelect }) => {
       searchable={true}
       searchBy="name"
       className="dropdown"
+      placeholder="Or select one"
     />
   );
 };

@@ -23,6 +23,7 @@ export const FingerPlacementOverlay: FC<FingerPlacementOverlayProps> = ({
           fretNumber={i + 1}
           positions={positions}
           fingerings={fingerings}
+          key={i}
         />
       );
     }

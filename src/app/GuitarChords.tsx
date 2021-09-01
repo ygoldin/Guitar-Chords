@@ -7,10 +7,12 @@ import "./GuitarChords.scss";
 import { ChordInfo } from "../sdk/ChordInfo";
 import { FingerPlacementOverlay } from "./FingerPlacementOverlay/FingerPlacementOverlay";
 import { ChordPositionSelection } from "./FingerPlacementOverlay/ChordPositionSelection";
+import { getChordInfo } from "../sdk";
 
 export const GuitarChords: FC = () => {
   const [selectedChord, setSelectedChord] = useState<null | ChordInfo>(null);
   const [isSelectChord, setIsSelectChord] = useState(false);
+  const [typedChord, setTypedChord] = useState("");
 
   return (
     <div className={"guitarChords"}>
@@ -24,9 +26,19 @@ export const GuitarChords: FC = () => {
       </button>
       {isSelectChord && (
         <div>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter a chord name"
+            onChange={(event) => setTypedChord(event.target.value)}
+          />
+          <button onClick={() => setSelectedChord(getChordInfo(typedChord))}>
+            Submit
+          </button>
           <ChordDropdown
             onSelect={(chordInfo) => setSelectedChord(chordInfo)}
           />
+
           <div className={"outerContainer"}>
             <GuitarOutline
               numFrets={6}

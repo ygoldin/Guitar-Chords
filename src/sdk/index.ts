@@ -14,6 +14,7 @@ export const getChordOptions = (): ChordOption[] => {
 export const getChordInfo = (chordName: string): ChordInfo | null => {
   const idx = keys.indexOf(chordName);
   const value = values[idx][0];
+  console.log(value);
   if (value !== null) {
     return new ChordInfo(chordName, value["positions"], value["fingerings"]);
   }
