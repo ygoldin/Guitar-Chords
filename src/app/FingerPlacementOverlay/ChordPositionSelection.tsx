@@ -49,7 +49,12 @@ export const ChordPositionSelection: FC<ChordPositionSelectionProps> = ({
       <button onClick={() => setChordNames(getChordNames(positions))}>
         Go
       </button>
-      <p>{chordNames === [] ? "Not a chord" : chordNames.toString()}</p>
+      {chordNames &&
+        (chordNames === [] ? (
+          <span>Not a chord</span>
+        ) : (
+          chordNames.map((chordName) => <span>{chordName}</span>)
+        ))}
     </div>
   );
 };
