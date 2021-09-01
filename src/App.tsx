@@ -1,16 +1,14 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { ChordDropdown } from "./app/ChordDropdown";
-import { GuitarOutline } from "./app/GuitarOutline/GuitarOutline";
+import { GuitarChords } from "./app/GuitarChords";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <ChordDropdown />
-        <GuitarOutline numFrets={6} />
+        <GuitarChords />
       </header>
     </div>
   );

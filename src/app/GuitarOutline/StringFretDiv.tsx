@@ -1,3 +1,5 @@
+// Created by Yael Goldin
+
 import "./StringFretDiv.scss";
 import { FC } from "react";
 

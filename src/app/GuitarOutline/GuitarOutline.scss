@@ -1,7 +1,10 @@
 .guitarOutline {
+  position: absolute;
   display: flex;
   flex-direction: column;
   margin-bottom: 50px;
+  top: 0;
+  left: 0;
 }
 
 .head {

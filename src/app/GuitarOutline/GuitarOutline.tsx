@@ -1,5 +1,7 @@
+// Created by Yael Goldin
+
 import React, { FC } from "react";
-import { Fret } from "./Fret";
+import { FretOutline } from "./FretOutline";
 import "./GuitarOutline.scss";
 
 export type GuitarOutlineProps = Readonly<{
@@ -10,7 +12,7 @@ export const GuitarOutline: FC<GuitarOutlineProps> = ({ numFrets }) => {
   const renderOutline = () => {
     const result = [];
     for (let i = 0; i < numFrets; i++) {
-      result.push(<Fret />);
+      result.push(<FretOutline />);
     }
     return result;
   };

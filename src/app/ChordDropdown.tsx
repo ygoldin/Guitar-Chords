@@ -1,10 +1,17 @@
+// Created by Yael Goldin
+
 import React, { FC, useState } from "react";
 import Select from "react-dropdown-select";
 import { getChordInfo, getChordOptions } from "../sdk";
+import { ChordInfo } from "../sdk/ChordInfo";
 
 const chordOptions = getChordOptions();
 
-export const ChordDropdown: FC = () => {
+export type ChordDropdownProps = Readonly<{
+  onSelect: (chordInfo: ChordInfo | null) => void;
+}>;
+
+export const ChordDropdown: FC<ChordDropdownProps> = ({ onSelect }) => {
   const [selectedChord, setSelectedChord] = useState("");
   return (
     <>
@@ -15,6 +22,7 @@ export const ChordDropdown: FC = () => {
           const chordToString =
             chordInfo === null ? "No info known" : chordInfo.toString();
           setSelectedChord(chordToString);
+          onSelect(chordInfo);
         }}
         values={[]}
         labelField="name"
