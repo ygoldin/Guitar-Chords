@@ -4,7 +4,7 @@ import { FC, useState } from "react";
 import { NUM_STRINGS } from "../../sdk/constants";
 import { SingleFingerPlacement } from "./SingleFingerPlacement";
 import "./ChordPositionSelection.scss";
-import { getChordName } from "../../sdk";
+import { getChordNames } from "../../sdk";
 
 export type ChordPositionSelectionProps = Readonly<{
   numFrets: number;
@@ -14,7 +14,7 @@ export const ChordPositionSelection: FC<ChordPositionSelectionProps> = ({
   numFrets,
 }) => {
   const [positions, setPositions] = useState([0, 0, 0, 0, 0, 0]);
-  const [chordName, setChordName] = useState<string | null>(null);
+  const [chordNames, setChordNames] = useState<string[]>([]);
 
   const onClick = (string: number, fret: number) => {
     return () => {
@@ -46,8 +46,10 @@ export const ChordPositionSelection: FC<ChordPositionSelectionProps> = ({
   return (
     <div className={"chordSelection"}>
       {renderFingerPlacements()}
-      <button onClick={() => setChordName(getChordName(positions))}>Go</button>
-      <p>{chordName === null ? "Not a chord" : chordName}</p>
+      <button onClick={() => setChordNames(getChordNames(positions))}>
+        Go
+      </button>
+      <p>{chordNames === [] ? "Not a chord" : chordNames.toString()}</p>
     </div>
   );
 };

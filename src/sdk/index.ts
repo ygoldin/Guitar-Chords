@@ -20,13 +20,12 @@ export const getChordInfo = (chordName: string): ChordInfo | null => {
   return null;
 };
 
-export const getChordName = (positions: number[]): string | null => {
+export const getChordNames = (positions: number[]): string[] => {
   const stringifiedPositions = positions.map((position) => position.toString());
-  console.log(stringifiedPositions);
+  const result = [];
   for (let i = 0; i < keys.length; i++) {
     const value = values[i][0];
     if (value !== null) {
-      console.log(value);
       let allTrue = true;
       for (let j = 0; j < stringifiedPositions.length; j++) {
         if (
@@ -40,9 +39,9 @@ export const getChordName = (positions: number[]): string | null => {
         }
       }
       if (allTrue) {
-        return keys[i];
+        result.push(keys[i]);
       }
     }
   }
-  return null;
+  return result;
 };
