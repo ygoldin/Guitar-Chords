@@ -22,5 +22,9 @@ export const SingleStringDecoration: FC<SingleStringDecorationProps> = ({
       : decorationType === StringDecorationType.Open
       ? "o"
       : " ";
-  return <span className={"singleDecoration"}>{decoration}</span>;
+  return decoration === " " ? (
+    <div className={"emptyDecoration"}>{"x"}</div>
+  ) : (
+    <div className={"singleDecoration"}>{decoration}</div>
+  );
 };

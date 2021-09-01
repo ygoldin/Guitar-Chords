@@ -1,5 +1,14 @@
 .singleDecoration {
-  margin-right: 45px;
+  margin-right: 40px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.emptyDecoration {
+  margin-right: 40px;
+  color: transparent;
 
   &:last-child {
     margin-right: 0;
