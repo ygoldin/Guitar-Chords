@@ -12,16 +12,12 @@ export type ChordDropdownProps = Readonly<{
 }>;
 
 export const ChordDropdown: FC<ChordDropdownProps> = ({ onSelect }) => {
-  const [selectedChord, setSelectedChord] = useState("");
   return (
     <>
       <Select
         options={chordOptions}
         onChange={(values) => {
           const chordInfo = getChordInfo(values[0].name);
-          const chordToString =
-            chordInfo === null ? "No info known" : chordInfo.toString();
-          setSelectedChord(chordToString);
           onSelect(chordInfo);
         }}
         values={[]}
@@ -30,7 +26,6 @@ export const ChordDropdown: FC<ChordDropdownProps> = ({ onSelect }) => {
         searchable={true}
         searchBy="name"
       />
-      <p>{selectedChord}</p>
     </>
   );
 };

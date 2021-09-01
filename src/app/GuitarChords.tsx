@@ -16,6 +16,7 @@ export const GuitarChords: FC = () => {
         <FingerPlacementOverlay
           numFrets={6}
           positions={selectedChord === null ? null : selectedChord.positions}
+          fingerings={selectedChord === null ? null : selectedChord.fingerings}
         />
       </div>
     </div>

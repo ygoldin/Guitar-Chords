@@ -5,15 +5,17 @@ import "./SingleFingerPlacement.scss";
 
 export type SingleFingerPlacementProps = Readonly<{
   disabled: boolean;
-  visible?: boolean;
+  finger?: number;
 }>;
 
 export const SingleFingerPlacement: FC<SingleFingerPlacementProps> = ({
   disabled,
-  visible = false,
+  finger,
 }) => {
-  return visible ? (
-    <button className={"singleFingerPlacement"} disabled={disabled}></button>
+  return finger ? (
+    <button className={"singleFingerPlacement"} disabled={disabled}>
+      <div className={"fingerValue"}>{finger}</div>
+    </button>
   ) : (
     <button className={"invisibleFingerPlacement"} disabled={disabled}></button>
   );
