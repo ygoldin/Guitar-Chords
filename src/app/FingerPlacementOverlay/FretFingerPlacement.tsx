@@ -24,11 +24,9 @@ export const FretFingerPlacement: FC<FretFingerPlacementProps> = ({
         fingerings !== null &&
         positions[i - 1] === fretNumber
       ) {
-        result.push(
-          <SingleFingerPlacement disabled finger={fingerings[i - 1]} />
-        );
+        result.push(<SingleFingerPlacement finger={fingerings[i - 1]} />);
       } else {
-        result.push(<SingleFingerPlacement disabled />);
+        result.push(<SingleFingerPlacement />);
       }
     }
     return result;
